@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic HTML Page</title>
+  </head>
+
+  <body>
+    <h1>
+      Submit New Article
+    </h1>
+    <%if @error%>
+      <h3><%=@error%></h3>
+    <%end%>
+
+    <h4>
+      <form action="/articles/new" method="post">
+        <ul>
+          <li><label for="title">Article Name:</label>
+          <input type="text" id="title" name="title" value="<%=@temp_inputs[0][0]%>"></li>
+          <li><label for="url">Article URL:</label>
+          <input type="text" id="url" name="url" value="<%=@temp_inputs[0][1]%>"></li>
+          <li><label for="article">Article Description:</label>
+          <input type="text" id="description" name="description" value="<%=@temp_inputs[0][2]%>"></li>
+          <input type="submit">
+        </ul>
+      </form>
+    </h4>
+    <h3>
+    <a href="/articles">Back to all articles</a>
+    </h3>
+  </body>
+</html>
